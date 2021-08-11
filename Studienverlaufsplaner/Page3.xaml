@@ -1,0 +1,18 @@
+﻿<Page x:Class="Studienverlaufsplaner.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Studienverlaufsplaner"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page3">
+
+    <Grid>
+        <Button Click="returnButton_Click" Content="zurück" HorizontalAlignment="Left" Margin="122,340,0,0" VerticalAlignment="Top" Width="74"/>
+        <ProgressBar Foreground="Tomato" HorizontalAlignment="Left" Height="30" Margin="224,88,0,0" VerticalAlignment="Top" Width="300" Value="68"/>
+        <TextBlock HorizontalAlignment="Left" Margin="308,169,0,0" TextWrapping="Wrap" Text="Folgende Module sind noch offen:" VerticalAlignment="Top"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="260,123,0,0" TextWrapping="Wrap" Text="13 von 20 Module sind geschafft" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="308,205,0,0" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Page>

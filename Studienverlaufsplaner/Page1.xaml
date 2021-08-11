@@ -1,0 +1,26 @@
+﻿<Page x:Class="Studienverlaufsplaner.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Studienverlaufsplaner"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+    <Grid>
+        <Button Click="nextButton_Click" Content="weiter" HorizontalAlignment="Left" Margin="503,333,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Label Content="Wähle deinen Studiengang aus:" HorizontalAlignment="Left" Margin="272,110,0,0" VerticalAlignment="Top" Height="37" Width="196"/>
+        <ComboBox x:Name="cboStdg" HorizontalAlignment="Left" Margin="272,164,0,0" VerticalAlignment="Top" Width="200" Height="30">
+            <ComboBoxItem Content="Intelligent Systems Design"/>
+            <ComboBoxItem Content="Energietechnik und Ressourcenoptimierung"/>
+            <ComboBoxItem Content="Interkulturelle Wirtschaftspsychologie"/>
+            <ComboBoxItem Content="Angewandte Informatik und Soziale medien"/>
+            <ComboBoxItem Content="Betriebswirtschaftslehre"/>
+            <ComboBoxItem Content="Biomedizinische Technologie"/>
+            <ComboBoxItem Content="Computervisualistik und Design"/>
+        </ComboBox>
+
+    </Grid>
+</Page>
