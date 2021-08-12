@@ -27,7 +27,7 @@ namespace Studienverlaufsplaner
 
         private void returnButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Page2());
+            this.NavigationService.Navigate(new Page2(""));
         }
     }
 }

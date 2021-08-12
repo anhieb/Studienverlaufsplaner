@@ -9,10 +9,10 @@
       Title="Page1">
 
     <Grid>
-        <Button Click="nextButton_Click" Content="weiter" HorizontalAlignment="Left" Margin="503,333,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="next" IsEnabled="False" Click="nextButton_Click" Content="weiter" HorizontalAlignment="Left" Margin="503,333,0,0" VerticalAlignment="Top" Width="75"/>
 
         <Label Content="Wähle deinen Studiengang aus:" HorizontalAlignment="Left" Margin="272,110,0,0" VerticalAlignment="Top" Height="37" Width="196"/>
-        <ComboBox x:Name="cboStdg" HorizontalAlignment="Left" Margin="272,164,0,0" VerticalAlignment="Top" Width="200" Height="30">
+        <ComboBox DropDownClosed ="isChosen" x:Name="cboStdg" HorizontalAlignment="Left" Margin="272,164,0,0" VerticalAlignment="Top" Width="200" Height="30">
             <ComboBoxItem Content="Intelligent Systems Design"/>
             <ComboBoxItem Content="Energietechnik und Ressourcenoptimierung"/>
             <ComboBoxItem Content="Interkulturelle Wirtschaftspsychologie"/>

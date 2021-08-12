@@ -20,9 +20,13 @@ namespace Studienverlaufsplaner
     /// </summary>
     public partial class Page2 : Page
     {
-        public Page2()
+        //List<Studiengang> studiengaenge = new List<Studiengang>();
+
+
+        public Page2(string stdgauswahl)
         {
             InitializeComponent();
+            MdlListe.Items.Add(stdgauswahl);
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)

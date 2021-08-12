@@ -20,7 +20,7 @@ namespace Studienverlaufsplaner
     /// </summary>
     public partial class Page1 : Page
     {
-        List<Studiengang> studiengaenge = new List<Studiengang>();
+        //List<Studiengang> studiengaenge = new List<Studiengang>();
         public Page1()
         {
             InitializeComponent();
@@ -29,12 +29,23 @@ namespace Studienverlaufsplaner
         }
      
         
-private void nextButton_Click(object sender, RoutedEventArgs e)
+    private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Page2());
+             
+            this.NavigationService.Navigate(new Page2((string)(cboStdg.SelectionBoxItem)));
         }
 
-        
+     private void isChosen(object sender, EventArgs e)
+        {
+            if((string)cboStdg.SelectionBoxItem == "")
+            {
+                next.IsEnabled = false;
+            }
+            else
+            {
+                next.IsEnabled = true;
+            }
+        }   
 
     }
 }
