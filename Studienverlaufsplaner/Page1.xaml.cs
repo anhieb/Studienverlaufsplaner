@@ -20,6 +20,7 @@ namespace Studienverlaufsplaner
     /// </summary>
     public partial class Page1 : Page
     {
+        List<Studiengang> studiengaenge = new List<Studiengang>();
         public Page1()
         {
             InitializeComponent();
@@ -33,17 +34,7 @@ private void nextButton_Click(object sender, RoutedEventArgs e)
             this.NavigationService.Navigate(new Page2());
         }
 
-        //public Employee() { }
+        
 
-        //public Employee(int annualSalary)
-        //{
-        //    Salary = annualSalary;
-        //}
-
-        //public Employee(int weeklySalary, int numberOfWeeks)
-        //{
-        //    Salary = weeklySalary * numberOfWeeks;
-        //}
-
-}
+    }
 }

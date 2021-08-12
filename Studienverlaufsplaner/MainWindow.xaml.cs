@@ -20,7 +20,7 @@ namespace Studienverlaufsplaner
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Studiengang> studiengaenge = new List<Studiengang>();
+        
 
         public MainWindow()
         {
@@ -31,7 +31,7 @@ namespace Studienverlaufsplaner
         private void MyWindow_Loaded(object sender, RoutedEventArgs e)
         {
             
-            mainFrame.Navigate(new Page1(studiengaenge));
+            mainFrame.Navigate(new Page1());
 
 
         }
