@@ -20,13 +20,18 @@ namespace Studienverlaufsplaner
     /// </summary>
     public partial class Page2 : Page
     {
-        //List<Studiengang> studiengaenge = new List<Studiengang>();
+        Studiengang studiengang;
 
 
         public Page2(string stdgauswahl)
         {
             InitializeComponent();
-            MdlListe.Items.Add(stdgauswahl);
+            studiengang = new Studiengang(stdgauswahl);
+            foreach (Modul modul in studiengang.module)
+            {
+                // hier dieses Modul der Liste hinzufügen
+
+            }
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)

@@ -11,12 +11,11 @@
     <Grid>
         <Button Click="nextButton_Click" Content="weiter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="454,317,0,0"/>
         <Button Click="returnButton_Click" Content="zurück" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="244,317,0,0"/>
-        <ListBox x:Name="MdlListe" HorizontalAlignment="Left" Height="100" Margin="329,156,0,0" VerticalAlignment="Top" Width="100">
-            <ListBoxItem Content="Modul 1"/>
-            <ListBoxItem Content="Modul 2"/>
-            
-        </ListBox>
         <Label Content="Modul Liste" HorizontalAlignment="Left" Margin="339,107,0,0" VerticalAlignment="Top" Height="25" Width="79"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="150" Margin="309,158,0,0" VerticalAlignment="Top" Width="300">
+            <Grid x:Name="MeinGrid"/>
+
+        </ScrollViewer>
 
     </Grid>
 </Page>

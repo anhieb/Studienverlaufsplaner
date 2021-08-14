@@ -9,9 +9,15 @@ namespace Studienverlaufsplaner
     class Modul
     {
         public string name;
-        public bool bestanden;
+        public bool bestanden = false;
         public double note;
         public double cp;
         public double gewichtung;
+        public Modul(string ggName, double ggCp, double ggGewichtung)
+        {
+            name = ggName;
+            cp = ggCp;
+            gewichtung = ggGewichtung;
+        }
     }
 }
