@@ -27,10 +27,38 @@ namespace Studienverlaufsplaner
         {
             InitializeComponent();
             studiengang = new Studiengang(stdgauswahl);
+            Label test1 = new Label();
+            test1.Content = "hehehee";
+            int Modulnr = 0;
+            List<RowDefinition> rows = new List<RowDefinition>();
+
+            ColumnDefinition col1 = new ColumnDefinition();
+            ColumnDefinition col2 = new ColumnDefinition();
+
+            MeinGrid.ColumnDefinitions.Add(col1);
+            MeinGrid.ColumnDefinitions.Add(col2);
+
+            MeinGrid.ShowGridLines = true;
+
+            List<Label> ModuleNames = new List<Label>();
+
+
             foreach (Modul modul in studiengang.module)
             {
                 // hier dieses Modul der Liste hinzufügen
+                    //neue Zeile ins Grid
+                rows.Add(new RowDefinition());
+                MeinGrid.RowDefinitions.Add(rows.ToArray()[Modulnr]);
+                    //Neues Label für den Modul Namen
+                ModuleNames.Add(new Label());
+                ModuleNames.ToArray()[Modulnr].Content = modul.name;
+                //Label ins Grid
+                Grid.SetRow(ModuleNames.ToArray()[Modulnr], Modulnr);
+                Grid.SetColumn(ModuleNames.ToArray()[Modulnr], 0);
 
+                MeinGrid.Children.Add(ModuleNames.ToArray()[Modulnr]);
+
+                Modulnr++;
             }
         }
 
