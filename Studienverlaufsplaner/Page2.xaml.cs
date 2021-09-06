@@ -27,8 +27,7 @@ namespace Studienverlaufsplaner
         {
             InitializeComponent();
             studiengang = new Studiengang(stdgauswahl);
-            Label test1 = new Label();
-            test1.Content = "hehehee";
+            
             int Modulnr = 0;
             List<RowDefinition> rows = new List<RowDefinition>();
 
@@ -37,10 +36,11 @@ namespace Studienverlaufsplaner
 
             MeinGrid.ColumnDefinitions.Add(col1);
             MeinGrid.ColumnDefinitions.Add(col2);
-
+            MeinGrid.ColumnDefinitions.Last().Width = new GridLength(200);
             MeinGrid.ShowGridLines = true;
 
             List<Label> ModuleNames = new List<Label>();
+            List<TextBox> KarlMarxs = new List<TextBox>();
 
 
             foreach (Modul modul in studiengang.module)
@@ -49,14 +49,18 @@ namespace Studienverlaufsplaner
                     //neue Zeile ins Grid
                 rows.Add(new RowDefinition());
                 MeinGrid.RowDefinitions.Add(rows.ToArray()[Modulnr]);
-                    //Neues Label für den Modul Namen
+                //Neues Label für den Modul Namen
+                KarlMarxs.Add(new TextBox());
                 ModuleNames.Add(new Label());
                 ModuleNames.ToArray()[Modulnr].Content = modul.name;
                 //Label ins Grid
+                Grid.SetRow(KarlMarxs.ToArray()[Modulnr], Modulnr);
                 Grid.SetRow(ModuleNames.ToArray()[Modulnr], Modulnr);
+                Grid.SetColumn(KarlMarxs.ToArray()[Modulnr], 1);
                 Grid.SetColumn(ModuleNames.ToArray()[Modulnr], 0);
 
                 MeinGrid.Children.Add(ModuleNames.ToArray()[Modulnr]);
+                MeinGrid.Children.Add(KarlMarxs.ToArray()[Modulnr]);
 
                 Modulnr++;
             }

@@ -12,7 +12,7 @@
         <Button Click="nextButton_Click" Content="weiter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="454,317,0,0"/>
         <Button Click="returnButton_Click" Content="zurück" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="244,317,0,0"/>
         <Label Content="Modul Liste" HorizontalAlignment="Left" Margin="339,48,0,0" VerticalAlignment="Top" Height="32" Width="79" RenderTransformOrigin="0.648,-3.432"/>
-        <ScrollViewer HorizontalAlignment="Left" Margin="164,107,0,0" VerticalAlignment="Top" Width="500" Height="200">
+        <ScrollViewer HorizontalAlignment="Left" Margin="48,85,0,0" VerticalAlignment="Top" Width="700" Height="200">
             <Grid x:Name="MeinGrid"> 
             </Grid>
 
