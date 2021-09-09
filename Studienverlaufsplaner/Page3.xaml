@@ -10,9 +10,9 @@
 
     <Grid>
         <Button Click="returnButton_Click" Content="zurück" HorizontalAlignment="Left" Margin="122,340,0,0" VerticalAlignment="Top" Width="74"/>
-        <ProgressBar Foreground="Tomato" HorizontalAlignment="Left" Height="30" Margin="224,88,0,0" VerticalAlignment="Top" Width="300" Value="68"/>
+        <ProgressBar x:Name ="Fortschrittsbalken" Foreground="Tomato" HorizontalAlignment="Left" Height="30" Margin="224,88,0,0" VerticalAlignment="Top" Width="300" Value="68"/>
         <TextBlock HorizontalAlignment="Left" Margin="308,169,0,0" TextWrapping="Wrap" Text="Folgende Module sind noch offen:" VerticalAlignment="Top"/>
-        <TextBlock  HorizontalAlignment="Left" Margin="260,123,0,0" TextWrapping="Wrap" Text="13 von 20 Module sind geschafft" VerticalAlignment="Top"/>
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="308,205,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="Fortschrittstext" HorizontalAlignment="Left" Margin="260,123,0,0" TextWrapping="Wrap" Text="13 von 20 Module sind geschafft" VerticalAlignment="Top"/>
+        <ListBox x:Name="offeneModule" MinWidth="200"  HorizontalAlignment="Left" Margin="308,205,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

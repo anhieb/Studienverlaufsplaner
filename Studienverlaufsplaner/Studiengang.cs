@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Studienverlaufsplaner
 {
-    class Studiengang
+    public class Studiengang
     {
         public string name;
         public List<Modul> module = new List<Modul>();

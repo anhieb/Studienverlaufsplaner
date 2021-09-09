@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Studienverlaufsplaner
 {
-    class Modul
+    public class Modul
     {
         public string name;
         public bool bestanden = false;

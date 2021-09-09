@@ -21,7 +21,7 @@ namespace Studienverlaufsplaner
     public partial class Page2 : Page
     {
         Studiengang studiengang;
-
+        private List<TextBox> KarlMarxs = new List<TextBox>();
 
         public Page2(string stdgauswahl)
         {
@@ -40,7 +40,7 @@ namespace Studienverlaufsplaner
             MeinGrid.ShowGridLines = true;
 
             List<Label> ModuleNames = new List<Label>();
-            List<TextBox> KarlMarxs = new List<TextBox>();
+            
 
 
             foreach (Modul modul in studiengang.module)
@@ -68,12 +68,40 @@ namespace Studienverlaufsplaner
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Page3());
+            readMarks();
+
+            this.NavigationService.Navigate(new Page3(studiengang));
+
         }
 
         private void returnButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Page1());
         }
+
+        
+
+        private void readMarks()
+        {
+            List<double> Zwischenberechnungsergebnisse = new List<double>();
+
+            for(int i = 0; i < MeinGrid.RowDefinitions.Count; i++)
+            {
+
+                if (!string.IsNullOrEmpty(KarlMarxs.ToArray()[i].Text.Trim()) && 
+                    double.TryParse(KarlMarxs.ToArray()[i].Text.Trim().Replace(",", "."), out _))
+                {
+
+                    
+                    studiengang.module.ToArray()[i].note = double.Parse(KarlMarxs.ToArray()[i].Text.Trim().Replace(",", "."));
+                    studiengang.module.ToArray()[i].bestanden = true;
+
+
+                }
+                
+            }
+        }
     }
 }
+
+
