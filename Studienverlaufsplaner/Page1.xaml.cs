@@ -23,6 +23,7 @@ namespace Studienverlaufsplaner
         //List<Studiengang> studiengaenge = new List<Studiengang>();
         public Page1()
         {
+
             InitializeComponent();
             
 
@@ -31,8 +32,8 @@ namespace Studienverlaufsplaner
         
     private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-             
-            this.NavigationService.Navigate(new Page2((string)(cboStdg.SelectionBoxItem)));
+            Studiengang studiengang = new Studiengang((string)(cboStdg.SelectionBoxItem));
+            this.NavigationService.Navigate(new Page2(studiengang));
         }
 
      private void isChosen(object sender, EventArgs e)

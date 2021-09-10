@@ -32,21 +32,25 @@ namespace Studienverlaufsplaner
             updateUi();
         }
 
-        double durchschnittsnote = 7;
+        double durchschnittsnote;
         int anzahlBestanden = 0;
         List<string> nichtBestanden = new List<string>();
+
 
         private void calculate()
         {
             double zwischenberechnung = 0;
+            double nenner = 0;
 
             for(int i = 0; i < studiengang.module.Count; i++)
             {
                 if ( studiengang.module.ToArray()[i].bestanden)
                 {
+                    // evtl übersichtlicher gestalten und in variablen setzen
                     anzahlBestanden++;
                     zwischenberechnung += studiengang.module.ToArray()[i].note * studiengang.module.ToArray()[i].cp *
                     studiengang.module.ToArray()[i].gewichtung;
+                    nenner += studiengang.module.ToArray()[i].cp * studiengang.module.ToArray()[i].gewichtung;
                 }
                 else
                 {
@@ -55,12 +59,13 @@ namespace Studienverlaufsplaner
 
             }
 
-            //durchschnittsnote = zwischenberechnung / anzahlBestanden;
+            durchschnittsnote = Math.Round((zwischenberechnung / nenner), 2);
         }
 
         private void returnButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Page2(""));
+            this.NavigationService.Navigate(new Page2(studiengang));
+            
         }
 
         private void updateUi()
@@ -77,6 +82,8 @@ namespace Studienverlaufsplaner
                 labelname.Content = modulname;
                 offeneModule.Items.Add(labelname);
             }
+
+            Durchschnittsnote_Lbl.Content = "Durchschnittsnote: " + durchschnittsnote;
         }
     }
 }

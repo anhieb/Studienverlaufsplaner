@@ -23,10 +23,10 @@ namespace Studienverlaufsplaner
         Studiengang studiengang;
         private List<TextBox> KarlMarxs = new List<TextBox>();
 
-        public Page2(string stdgauswahl)
+        public Page2(Studiengang stdgang)
         {
             InitializeComponent();
-            studiengang = new Studiengang(stdgauswahl);
+            studiengang = stdgang;
             
             int Modulnr = 0;
             List<RowDefinition> rows = new List<RowDefinition>();
@@ -58,6 +58,10 @@ namespace Studienverlaufsplaner
                 Grid.SetRow(ModuleNames.ToArray()[Modulnr], Modulnr);
                 Grid.SetColumn(KarlMarxs.ToArray()[Modulnr], 1);
                 Grid.SetColumn(ModuleNames.ToArray()[Modulnr], 0);
+
+                if (studiengang.module.ToArray()[Modulnr].bestanden) {
+                KarlMarxs.ToArray()[Modulnr].Text = studiengang.module.ToArray()[Modulnr].note.ToString();
+                }
 
                 MeinGrid.Children.Add(ModuleNames.ToArray()[Modulnr]);
                 MeinGrid.Children.Add(KarlMarxs.ToArray()[Modulnr]);
@@ -98,7 +102,10 @@ namespace Studienverlaufsplaner
 
 
                 }
-                
+                else
+                {
+                    studiengang.module.ToArray()[i].bestanden = false;
+                }
             }
         }
     }

@@ -18,6 +18,12 @@ namespace Studienverlaufsplaner
                     loadISDModuls();
 
                     break;
+
+                case "Energietechnik und Ressourcenoptimierung":
+                    loadETRModuls();
+
+                    break;
+
                 default:
                         break;
                     
